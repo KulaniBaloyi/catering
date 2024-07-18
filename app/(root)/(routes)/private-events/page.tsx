@@ -1,9 +1,9 @@
 import React from 'react'
 
-const PrivateEvents = () => {
+const PrivateEventsPage = () => {
   return (
     <div>Private Evnets</div>
   )
 }
 
-export default PrivateEvents
+export default PrivateEventsPage

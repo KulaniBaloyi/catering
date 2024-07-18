@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Contact = () => {
+const ContactPage = () => {
   return (
     <div className='m-auto w-[90%] max-w-5xl'>
-        <section className='border p-10 grid grid-cols-2 gap-10 mt-10'>
-            <div className='flex flex-col'>
+        <section className='border p-10 grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10'>
+            <div className='w-full flex flex-col col-span-1'>
                 <label>Name*</label>
                 <input type='text' className='outline-none focus:outline-none border p-3'/>
             </div>
@@ -45,4 +45,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default ContactPage

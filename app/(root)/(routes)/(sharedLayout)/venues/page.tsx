@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Venues = () => {
+const VenuesPage = () => {
   return (
     <div>Venues</div>
   )
 }
 
-export default Venues
+export default VenuesPage

@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandingPage from "@/components/LandingPage";
-import GetInTouch from "@/components/GetInTouch";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,9 +21,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header/>
-        <LandingPage/>
+        <LandingPage data=''/>
         {children}
-        <GetInTouch/>
+    
         <Footer/>
         </body>
     </html>
