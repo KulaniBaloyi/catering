@@ -15,7 +15,7 @@ type PropType = {
 const LandingPage: React.FC<PropType> = (props) => {
   const [imagePath, setImagePath] = useState<string | null>(null)
   const [title, setTitle] = useState<string | null>(null)
-  const imageMap:{ [path: string]: { url: string; title: string ; subTitle?:string; cta?:boolean} } = useMemo(() => {
+  const imageMap:{ [path: string]: { url: string; title: string ; subTitle?:string|undefined; cta?:boolean} } = useMemo(() => {
     // Define the imageMap object here
     return{
       "/": {
@@ -88,8 +88,8 @@ const LandingPage: React.FC<PropType> = (props) => {
         <div className='absolute inset-0 bg-neutral-950/70 z-10'></div>
         <section className='z-20 flex flex-col items-center gap-5 w-full max-w-2xl  text-white'>
             <h1 className='text-lg lg:text-6xl text-center font-light uppercase tracking-[8px] leading-tight'>{title}</h1>
-            <p className='lg:text-xs text-[.65rem] font-normal tracking-[8px] uppercase text-center'>{imageMap[pathname].subTitle&&imageMap[pathname].subTitle}</p>
-            {imageMap[pathname].cta&&<Link className='border border-[#AA8E65] text-[#AA8E65] hover:bg-[#AA8E65] hover:text-white py-3 tracking-[4px] leading-tight uppercase text-xs  px-5' href={"/"}>learn more</Link>}
+            <p className='lg:text-xs text-[.65rem] font-normal tracking-[8px] uppercase text-center'>{imageMap[pathname]?.subTitle&&imageMap[pathname]?.subTitle}</p>
+            {imageMap[pathname]?.cta&&<Link className='border border-[#AA8E65] text-[#AA8E65] hover:bg-[#AA8E65] hover:text-white py-3 tracking-[4px] leading-tight uppercase text-xs  px-5' href={"/"}>learn more</Link>}
         </section>
        
 
