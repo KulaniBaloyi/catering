@@ -3,7 +3,7 @@ import React from 'react'
 const PrivateEventsPage = () => {
   return (
     <div className='flex flex-col'>
-      <h2 className='mt-20 text-2xl w-full max-w-2xl mx-auto lg:text-4xl leading-[54px] mb-7 text-[#333] font-light'>Fork & Spoon Productions enables outstanding private events from creation to clean-up.</h2>
+      <h2 className='mt-20 text-2xl w-full max-w-2xl mx-auto lg:text-4xl leading-[54px] mb-7 text-[#333] font-light'>The Gravy Train Express enables outstanding private events from creation to clean-up.</h2>
       <p className='mb-7 w-full max-w-2xl mx-auto text-[#656769] leading-relaxed text-xs sm:text-sm md:text-base  lg:text-lg font-light'>A whimsical group excursion. A bar or bat mitzvah for friends and family. A trendy urban get-together. We create memorable moments at every social gathering.</p>
       <section className='ml-[10%] grid grid-cols-1 md:grid-cols-2 gap-10'>
         <div className='border aspect-square h-96 w-full'></div>

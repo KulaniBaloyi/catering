@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import { useEffect,useState,useMemo } from "react"
 import Link from 'next/link'
+import { ChevronDown } from "lucide"
 
 interface ImageMap {
   [path: string]: string; // Define the interface for imageMap with string keys and string values
@@ -84,8 +85,14 @@ const LandingPage: React.FC<PropType> = (props) => {
     return () => {}
   }, [pathname,imageMap])
   return (
-    <div  style={{ backgroundImage: `url(${imagePath || "/default-image.jpg"})` }} className="relative grid place-content-center min-h-screen bg-cover origin-center ">
+    <div  style={{ backgroundImage: `url(${imagePath || "/default-image.jpg"})` }} className="relative grid place-content-center h-[95dvh] lg:h-dvh bg-cover origin-center ">
         <div className='absolute inset-0 bg-neutral-950/70 z-10'></div>
+       
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"  className="h-5 w-5 z-20 text-white absolute bottom-5 animate-bounce left-1/2">
+  <path fillRule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clipRule="evenodd" />
+</svg>
+
+
         <section className='z-20 flex flex-col items-center gap-5 w-[90%] max-w-2xl mx-auto text-white'>
             <h1 className='text-lg  lg:text-6xl text-center font-light uppercase tracking-[8px] w-full leading-tight'>{title}</h1>
             <p className='lg:text-xs text-[.65rem] font-normal tracking-[8px] uppercase text-center'>{imageMap[pathname]?.subTitle&&imageMap[pathname]?.subTitle}</p>

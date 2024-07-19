@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LandingPage from "@/components/LandingPage";
+import Menu from "@/components/Menu"
+import { Inter,Nanum_Myeongjo } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
+const nanum_myeongjo = Nanum_Myeongjo({weight:"400",subsets:["latin"]})
 
 export const metadata: Metadata = {
   title: "Catering",
@@ -19,7 +22,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={nanum_myeongjo.className}>
+        <Menu/>
         <Header/>
         <LandingPage data=''/>
         {children}

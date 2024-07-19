@@ -3,7 +3,7 @@ import React from 'react'
 const CorporatePage = () => {
   return (
     <div className='flex flex-col'>
-    <h2 className='mt-20 text-2xl w-full max-w-2xl mx-auto lg:text-4xl leading-[54px] mb-7 text-[#333] font-light'>Fork & Spoon Productions plans and creates astounding corporate events from start to finish.</h2>
+    <h2 className='mt-20 text-2xl w-full max-w-2xl mx-auto lg:text-4xl leading-[54px] mb-7 text-[#333] font-light'>The Gravy Train Express plans and creates astounding corporate events from start to finish.</h2>
     <p className='mb-7 w-full max-w-2xl mx-auto text-[#656769] leading-relaxed text-xs sm:text-sm md:text-base  lg:text-lg font-light'>Employee appreciations, anniversary celebrations, product launches, grand openings, all day conferences, open houses and more. We take the same meticulous approach to every corporate function.</p>
     <button className='text-[#AA8E65] border border-[#AA8E65] py-3 px-5 tracking-[4px] leading-tight uppercase text-xs max-w-2xl mx-auto self-start mb-5'>schedule a consultaion</button>
     <section className='mt-10 lg:mt-20 ml-[10%] grid grid-cols-1 md:grid-cols-2 gap-10'>

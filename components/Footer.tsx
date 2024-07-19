@@ -24,7 +24,7 @@ const Footer = () => {
                 <Link className='self-start border mt-5 border-[#AA8E65] text-[#AA8E65] py-3 tracking-[4px] leading-tight uppercase text-xs px-5' href={"/"}>send us a message</Link>
             </ul>
             <div className="md:col-span-3 leading-6 text-xs lg:text-sm py-5 flex flex-col md:flex-row md:justify-between border-t border-[#444]">
-                <p>	&copy;2023 Fork &amp; Spoon Production · 1760 Cesar Chavez Suite K San Francisco, CA 94124 · 415.860.0798 · Site by <span className="text-[#AA8E65]">nuphoriq</span></p>
+                <p>	&copy;2024 The Gravy Train Express · 1760 Mswapeni Suite K Johannesburg, CA 94124 · 010.000.0798 · Site by <span className="text-[#AA8E65]">Kulani Baloyi</span></p>
                 
                 {/* <div className="flex items-center gap-2"><FaFacebookSquare height={50} width={50} /><FaInstagram /></div> */}
             </div>

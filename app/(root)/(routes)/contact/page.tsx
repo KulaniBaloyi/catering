@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ContactPage = () => {
+    
   return (
     <div className='m-auto w-[90%] max-w-5xl'>
         <section className='border p-10 grid grid-cols-1 lg:grid-cols-2 gap-10 mt-10'>
