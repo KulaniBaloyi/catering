@@ -86,7 +86,7 @@ const LandingPage: React.FC<PropType> = (props) => {
   return (
     <div  style={{ backgroundImage: `url(${imagePath || "/default-image.jpg"})` }} className="relative grid place-content-center min-h-screen bg-cover origin-center ">
         <div className='absolute inset-0 bg-neutral-950/70 z-10'></div>
-        <section className='z-20 flex flex-col items-center gap-5 w-[90%] max-w-2xl  text-white'>
+        <section className='z-20 flex flex-col items-center gap-5 w-[90%] max-w-2xl mx-auto text-white'>
             <h1 className='text-lg  lg:text-6xl text-center font-light uppercase tracking-[8px] w-full leading-tight'>{title}</h1>
             <p className='lg:text-xs text-[.65rem] font-normal tracking-[8px] uppercase text-center'>{imageMap[pathname]?.subTitle&&imageMap[pathname]?.subTitle}</p>
             {imageMap[pathname]?.cta&&<Link className='border border-[#AA8E65] text-[#AA8E65] hover:bg-[#AA8E65] hover:text-white py-3 tracking-[4px] leading-tight uppercase text-xs  px-5' href={"/"}>learn more</Link>}
