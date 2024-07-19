@@ -32,6 +32,34 @@ return (
                     <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
                   home
                 </li>
+                <li onClick={()=>handleClick('/about')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
+                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
+                  About
+                </li>
+                <li onClick={()=>handleClick('/private-events')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
+                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
+                  Private Events
+                </li>
+                <li onClick={()=>handleClick('/weddings')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
+                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
+                  Weddings
+                </li>
+                <li onClick={()=>handleClick('/corporate')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
+                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
+                  Corporate
+                </li>
+                <li onClick={()=>handleClick('/venues')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
+                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
+                  Venues
+                </li>
+                <li onClick={()=>handleClick('/services')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
+                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
+                  Services
+                </li>
+                <li onClick={()=>handleClick('/contact')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
+                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
+                  Contact
+                </li>
                
             </ul>
         </div>
