@@ -1,4 +1,4 @@
-
+import Link from "next/link"
 const Footer = () => {
   return (
     <footer className="p-[2.5%] px-[5%] lg:px-[7.5%] lg:p-[5%] z-20 bg-[#222] text-white ">
@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="flex flex-col mb-16">
                 <h1 className="text-lg lg:text-2xl tracking-[2px] mb-9 uppercase font-light leading-tight">Contact us</h1>
                 <p className=" font-thin text-xs lg:text-sm">We are happy to answer your questions and look forward to planning your event. Please call <span className="border-b border-[#333]">415.860.0798</span>, or</p>
-                {/* <Link className='self-start border mt-5 border-[#AA8E65] text-[#AA8E65] py-3 tracking-[4px] leading-tight uppercase text-xs px-5' href={"/"}>send us a message</Link> */}
+                <Link className='self-start border mt-5 border-[#AA8E65] text-[#AA8E65] py-3 tracking-[4px] leading-tight uppercase text-xs px-5' href={"/"}>send us a message</Link>
             </ul>
             <div className="md:col-span-3 leading-6 text-xs lg:text-sm py-5 flex flex-col md:flex-row md:justify-between border-t border-[#444]">
                 <p>	&copy;2023 Fork &amp; Spoon Production · 1760 Cesar Chavez Suite K San Francisco, CA 94124 · 415.860.0798 · Site by <span className="text-[#AA8E65]">nuphoriq</span></p>

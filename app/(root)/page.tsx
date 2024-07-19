@@ -4,9 +4,8 @@ import PrivateEvent from "@/components/PrivateEvent";
 
 export default function Home() {
   return (
-    <main className=" ">
-      <MissionStatement/>
-      <PrivateEvent/>
+    <main className="w-4/5 mx-auto p-20 ">
+      Home page
     </main>
   );
 }
