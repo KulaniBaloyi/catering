@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={nanum_myeongjo.className}>
         <Menu/>
         <Header/>
-        <LandingPage data=''/>
+        <LandingPage />
         {children}
     
         <Footer/>
