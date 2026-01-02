@@ -1,68 +1,79 @@
 "use client"
-import { useState,useEffect } from "react"
-//import { X } from "lucide-react"
+import { usePathname, useRouter } from "next/navigation"
 import useMenu from "@/hooks/use-menu"
-import { useRouter } from "next/navigation"
+
+const MENU_LINKS = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Private Events", path: "/private-events" },
+  { name: "Weddings", path: "/weddings" },
+  { name: "Corporate", path: "/corporate" },
+  { name: "Venues", path: "/venues" },
+  { name: "Services", path: "/services" },
+  { name: "Contact", path: "/contact" },
+]
+
 const Menu = () => {
-    const [isMounted,setIsMounted]= useState(false)
-    const close = useMenu((state:any)=>state.close)
-    const isOpen= useMenu((state:any)=>state.isOpen)
-    const route = useRouter()
+  const close = useMenu((state: any) => state.close)
+  const isOpen = useMenu((state: any) => state.isOpen)
+  const router = useRouter()
+  const pathname = usePathname()
 
-    useEffect(()=>{
-        setIsMounted(true)
-    },[])
+  if (!isOpen) return null
 
-    const handleClick = (path:string)=>{
-        route.push(`${path}`)
-        close()
-    }
-if(!isMounted)return
+  const handleClick = (path: string) => {
+    router.push(path)
+    close()
+  }
 
-if(!isOpen)return
+  return (
+    <div className="fixed inset-0 z-[9999] flex justify-end">
+      {/* Overlay */}
+      <div 
+        onClick={close}
+        className="absolute inset-0 bg-black/60 backdrop-blur-md animate-in fade-in duration-500" 
+      />
 
-return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999]">
-        <div className="bg-white absolute left-0 top-0 bottom-0 w-full z-[99999] flex flex-col">
-        <button onClick={()=>close()} className="group leading-snug text-[1.4em] p-5 py-10  border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative">
-                   X
-                </button>
-            <ul className="flex flex-col mt-10 overflow-y-auto">
-            <li onClick={()=>handleClick('/')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  home
-                </li>
-                <li onClick={()=>handleClick('/about')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  About
-                </li>
-                <li onClick={()=>handleClick('/private-events')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  Private Events
-                </li>
-                <li onClick={()=>handleClick('/weddings')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  Weddings
-                </li>
-                <li onClick={()=>handleClick('/corporate')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  Corporate
-                </li>
-                <li onClick={()=>handleClick('/venues')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  Venues
-                </li>
-                <li onClick={()=>handleClick('/services')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  Services
-                </li>
-                <li onClick={()=>handleClick('/contact')} className="group hover:bg-zinc-200/30  leading-snug text-[1.4em] p-4 border-y border-zinc-500/20 font-medium uppercase tracking-normal transition-all duration-300 ease-out cursor-pointer relative pl-5">
-                    <p className="group-hover:scale-100 scale-0 absolute left-0 top-1 bottom-1 animate-pulse   w-1 rounded-full bg-gradient-to-r from-orange-600 to-yellow-600"/>
-                  Contact
-                </li>
-               
-            </ul>
+      {/* Slide-out Panel */}
+      <div className="relative w-full max-w-sm bg-neutral-950 h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-500">
+        
+        {/* Header/Close */}
+        <div className="flex justify-end p-6">
+          <button 
+            onClick={close} 
+            className="text-white/50 hover:text-white transition-colors"
+            aria-label="Close menu"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
         </div>
+
+        {/* Navigation List */}
+        <nav className="flex-1 px-8 pt-4">
+          <ul className="space-y-2">
+            {MENU_LINKS.map((link) => (
+              <li 
+                key={link.path}
+                onClick={() => handleClick(link.path)}
+                className="group flex items-center justify-between py-4 cursor-pointer border-b border-white/5 transition-all"
+              >
+                <span className={`text-xl uppercase tracking-[0.3em] transition-colors duration-300 ${pathname === link.path ? 'text-[#AA8E65]' : 'text-white group-hover:text-[#AA8E65]'}`}>
+                  {link.name}
+                </span>
+                
+                {/* Visual Indicator */}
+                <div className={`h-1.5 w-1.5 rounded-full bg-[#AA8E65] transition-all duration-500 ${pathname === link.path ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Footer Info */}
+        <div className="p-8 border-t border-white/5">
+          <p className="text-[#AA8E65] text-[10px] uppercase tracking-[0.4em] font-bold">The Gravy Train</p>
+          <p className="text-white/30 text-[9px] uppercase tracking-[0.2em] mt-1">Express Catering & Events</p>
+        </div>
+      </div>
     </div>
   )
 }
